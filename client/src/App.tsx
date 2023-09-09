@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-	const [msg, setMsg] = useState(0)
+	const [msg, setMsg] = useState('')
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await fetch('/api/')
@@ -17,28 +15,28 @@ function App() {
 	}, [])
 
 	return (
-		<>
+		<div className="w-full ">
 			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
+				<div>
+					<div>
+						<div
+							className="nes-container is-rounded"
+							style={{ background: '#00000080' }}>
+							<p>{msg}</p>
+							<h1>WELCOME TO SAVEQUEST</h1>
+							<h3>It's Save to Win!</h3>
+						</div>
+					</div>
+					<div>
+						<section className="message -left">
+							<div className="nes-balloon">
+								<p>Click that dollar to get started!</p>
+							</div>
+						</section>
+					</div>
+				</div>
 			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setMsg(count => count + 1)}>
-					count is {msg}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+		</div>
 	)
 }
 
