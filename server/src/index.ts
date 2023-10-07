@@ -3,7 +3,9 @@ import cors from 'cors'
 
 const app = express()
 
-app.use(cors())
+app.use(cors()) // update to specific domains later
+
+app.use(express.json())
 
 app.get('/', (req, res) => {
 	res.json({ msg: 'Hello dork' })
